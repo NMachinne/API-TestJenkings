@@ -9,7 +9,7 @@ pipeline {
         string(name: "container_name", defaultValue: "ejercicioDevOps", description: "nombre del contenedor de docker." )
         string(name: "image_name", defaultValue: "ejercicioDevOps_img", description: "nombre de imagen de docker ")
         string(name: "tag_name", defaultValue: "lts", description: "tag de la imagen docker ")
-        string(name: "container_port", defaultValue: 5000, description: "Puerto del contenedor")
+        string(name: "container_port", defaultValue: "5000", description: "Puerto del contenedor")
     }
 
     stages{
