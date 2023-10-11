@@ -15,7 +15,7 @@ pipeline {
     stages{
         stage('install'){
            steps {
-            git branch: 'develop', url: "https://github.com/NMachinne/API-TestJenkings/ejercicioDevops"
+            git branch: 'develop', url: "https://github.com/NMachinne/API-TestJenkings/tree/develop/ejercicioDevops"
             dir ('develop'){
                 sh 'mvn clean install -DskipTests'
             }
