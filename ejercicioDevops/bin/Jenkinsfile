@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    tools {
+        nodejs "node"
+    }
+
+    parameters {
+        string(name: "container_name", defaultValue: "ejercicioDevOps", description: "nombre del contenedor de docker." )
+        string(name: "image_name", defaultValue: "ejercicioDevOps_img", description: "nombre de imagen de docker ")
+        string(name: "tag_name", defaultValue: "lts", description: "tag de la imagen docker ")
+        string(name: "container_port", defaultValue: 80, description: "Puerto del contenedor")
+    }
+
+    stages{
+        stage('install'){
+           steps {
+            git branch: 'develop', url: "https://github.com/NMachinne/API-TestJenkings"
+            dir ('develop'){
+                sh 'npm install'
+            }
+           }
+        }
+    }
+}
