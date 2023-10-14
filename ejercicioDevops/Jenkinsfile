@@ -18,7 +18,7 @@ pipeline {
             git branch: 'develop', url: "https://github.com/NMachinne/API-TestJenkings.git"
             dir ('ejercicioDevops'){
                 sh 'mvn clean install -DskipTests'
-                sh 'javac ejercicioDevops.jar'
+                sh 'java -jar ejercicioDevops.jar'
             }
            }
         }
